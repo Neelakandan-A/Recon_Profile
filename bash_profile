@@ -1,3 +1,7 @@
+nmap{}{
+nmap -sV -T3 -Pn -p2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,7447,7080,8880,8983,5673,7443,19000,19080 $1
+}
+
 fd(){
 findomain -t $1
 }
@@ -67,6 +71,7 @@ cd ~/tools/dirsearch/db
 fufextension(){
 ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w ~/tools/dirsearch/db/ffuf_extension.txt -e php,asp,aspx,jsp,py,txt,conf,config,bak,backup,swp,old,db,sql,json,xml,log
 }
+
 fufthis(){
 ffuf -u $1/FUZZ -mc 200,301,302,403,401 -t 150 -w $(pwd)/wordlist.txt -e php,asp,aspx,jsp,txt,conf,config,bak,backup,old,db,sql,json,xml,log
 }
